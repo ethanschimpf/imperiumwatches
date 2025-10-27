@@ -1,0 +1,328 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  line-height: 1.6;
+  background-color: #fff8f0; /* cream background */
+  color: #000; /* black text */
+}
+
+/* Header & Navigation */
+.header-banner {
+  background-color: #530d1f; /* burgundy */
+  padding: 20px;
+  text-align: center;
+}
+.header-banner h1 {
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2em;
+}
+
+nav {
+  background-color: #530d1f; /* burgundy background */
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 10px 0;
+}
+nav sl-button {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  font-size: 1em;
+  color: #fff;
+}
+
+/* Hero section */
+#hero {
+  width: 100%;
+  margin-top: 0;
+  padding: 0;
+  position: relative; /* in case you want to position label inside hero */
+}
+#hero img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+#hero .label-box {
+  position: absolute;  
+  bottom: 20px;        
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(83, 13, 31, 0.8);
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.2em;
+  font-weight: bold;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  text-align: center;
+}
+
+/* Sections styles */
+section {
+  padding: 50px 20px;
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+}
+
+/* Specific background & text colors for sections */
+#section1 {
+  background-color: #fff8f0; /* cream background */
+  color: #000; /* black text */
+}
+#section2 {
+  background-color: #530d1f; /* burgundy */
+  color: #fff; /* white text for contrast */
+}
+#section3 {
+  background-color: #fff8f0; /* cream */
+  color: #530d1f; /* black text */
+}
+
+/* Headings */
+h2 {
+  margin-bottom: 20px;
+  font-size: 2em;
+  color: inherit;
+}
+
+/* Gallery container */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  padding: 20px;
+  justify-items: center;
+}
+
+/* Gallery images */
+.gallery img {
+  width: 100%;
+  max-width: 250px;
+  height: auto;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+}
+
+/* Collection boxes - on burgundy background */
+.collection-boxes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+.box {
+  padding: 20px;
+  border-radius: 8px;
+  border: 2px solid #fff;
+  background-color: #530d1f;
+  color: #fff;
+  width: 250px;
+  text-align: center;
+}
+
+/* Footer styles */
+footer {
+  background-color: #530d1f;
+  padding: 20px;
+  color: #fff;
+  text-align: center;
+  margin-top: 30px;
+}
+
+
+/* SVG spin animation */
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+.spinner {
+  animation: spin 2s linear infinite;
+}
+
+/* Modal overlay styles */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; 
+  z-index: 9999; 
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  overflow: auto; 
+  background-color: rgba(41, 41, 41, 0.493); /* dark transparent background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* The enlarged image inside modal */
+.modal-content {
+  max-width: 90%;
+  max-height: 80%;
+  border-radius: 8px;
+  display: block;
+  
+}
+
+/* The close button (X) */
+.close {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Overlay background */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.8); /* dark transparent background */
+  justify-content: center;
+  align-items: center;
+  display: flex; /* Flex to center the image */
+}
+
+/* Enlarge image inside modal */
+.modal-content {
+  max-width: 90%;
+  max-height: 80%;
+  border-radius: 8px;
+  display: block;
+  margin: auto;
+}
+
+/* Close button styles */
+.close {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+sl-card {
+  --sl-card-border-radius: 8px;
+  --sl-card-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  --sl-card-padding: 20px;
+
+  border: 5px solid #e1e1e1;
+  transition: transform 0.2s;
+  margin: 20px;
+}
+
+sl-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+sl-card img {
+  width: 50%;
+  border-radius: 10px 10px 10px 10px;
+}
+
+sl-card strong {
+  font-size: 1.2em;
+  color: #ffffff; /* Burgundy */
+  margin-bottom: 10px;
+  display: block;
+}
+
+sl-card p {
+  color: #ffffff;
+  line-height: 1.6;
+}
+
+/* Style the footer (buttons) inside the dialog */
+#infoDialog::part(footer) {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+/* Style for the navbar container (if not already styled) */
+#navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #530d1f;
+}
+
+/* Style the site name/logo */
+.logo {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  color: #fff;
+  font-size: 1.5em;
+}
+
+/* Navbar styles */
+#navbar {
+  display: flex;
+  justify-content: space-between; /* Space between logo and menu */
+  align-items: center;           /* Vertically center items */
+  padding: 10px 20px;
+  background-color: #530d1f;    
+  position: relative;            
+}
+
+/* Logo/Name in the center (or left if preferred) */
+.logo {
+  position: absolute;           
+  left: 50%;                     
+  transform: translateX(-50%);
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  font-size: 1.5em;
+}
+
+/* Hamburger icon on the far right, inside the dropdown trigger */
+#menuDropdown {
+  margin-left: auto; /* push to right side */
+}
+
+
+#menuDropdown button {
+  background: none;
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+}
+
+body {
+  opacity: 0;
+  transition: opacity 1s;
+}
+
+body.loaded {
+  opacity: 1;
+}
