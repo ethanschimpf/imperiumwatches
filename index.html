@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Imperium Watches</title>
+
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" />
+
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace/dist/themes/light.css" />
+
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+<div id="loader" style="position:fixed; top:0; left:0; width:100%; height:100%; background-color:#fff; display:flex; justify-content:center; align-items:center; z-index:9999;">
+  <svg class="spinner" width="50" height="50" viewBox="0 0 50 50">
+    <circle cx="25" cy="25" r="20" stroke="#800020" stroke-width="4" fill="none" stroke-linecap="round" stroke-dasharray="31.4 188.4" transform="rotate(-90 25 25)" />
+  </svg>
+</div>
+  <!-- Header Banner with Site Name -->
+  <div id="navbar" class="navbar">
+  <!-- Site name/logo -->
+  <div class="logo">Imperium Watches</div>
+  <!-- Dropdown trigger and menu -->
+  <sl-dropdown id="menuDropdown">
+    <sl-button slot="trigger" id="hamburgerBtn" style="padding:8px; background:none; border:none; cursor:pointer;">
+      <!-- Hamburger SVG icon -->
+      <svg width="24" height="24" viewBox="0 0 100 80" fill="#fff" xmlns="http://www.w3.org/2000/svg">
+        <rect width="100" height="10"></rect>
+        <rect y="30" width="100" height="10"></rect>
+        <rect y="60" width="100" height="10"></rect>
+      </svg>
+    </sl-button>
+
+  </sl-dropdown>
+</div>
+  </nav>
+  </header>
+
+
+<section id="hero" style="position: relative;">
+  <div class="image-label-container">
+    <img src="images/image2.png" alt="hero image" style="width: 100%; height: auto;">
+    <div class="label-box">IMPERIUM 3000GX</div>
+  </div>
+</section>
+
+  <!-- Section 1: Our Heritage (Cream background, black text) -->
+  <section id="section1" class="content-section" style="background-color: #fff8f0;">
+    <h2>Our Heritage</h2>
+    <p>Learn about the craftsmanship, history, and values that make Imperium Watches unique...</p>
+  </section>
+
+  <!-- Section 2: Collection (Burgundy box, white text) -->
+  <section id="section2" class="content-section" style="background-color: #530d1f; color: #fff;">
+    <h2>Our Collection</h2>
+    
+    <sl-card style="width: 300px;">
+  <img slot="image" src="images/1761482188961.jpeg" alt="Luxury Watch">
+  <strong>Classic Series</strong>
+  <p>Elegant design with top-notch craftsmanship.</p>
+</sl-card>
+  </section>
+
+  <!-- Section 3: Gallery (Cream background, black text) -->
+  <section id="section3" class="content-section" style="background-color: #fff8f0;">
+    <h2>Gallery</h2>
+   <div class="gallery">
+  <img src="images/1761482188961.jpeg" class="enlargeable" alt="Watch 1" />
+  <img src="images/1761482188961.jpeg" class="enlargeable" alt="Watch 2" />
+  <img src="images/1761482188961.jpeg" class="enlargeable" alt="Watch 3" />
+</div>
+  </section>
+
+  <div id="imageModal" class="modal" style="display:none;">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="modalImage" />
+</div>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const modal = document.getElementById('imageModal');
+    const modalImg = document.getElementById('modalImage');
+    const closeBtn = document.getElementsByClassName('close')[0];
+
+    document.querySelectorAll('.enlargeable').forEach(img => {
+      img.addEventListener('click', () => {
+        console.log('Clicked:', img.src);
+        modal.style.display = 'flex';
+        modalImg.src = img.src;
+      });
+    });
+
+    closeBtn.onclick = () => {
+      modal.style.display = 'none';
+    };
+    window.onclick = (e) => {
+      if (e.target == modal) {
+        modal.style.display = 'none';
+      }
+    };
+  });
+</script>
+
+
+  <!-- Footer -->
+  <footer style="background-color:#530d1f; padding:20px; color:#fff; text-align:center;">
+    &copy; 2025 Imperium Watches. All rights reserved.
+  </footer>
+
+  <!-- Load Shoelace JS -->
+  <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace/dist/shoelace.js"></script>
+  <!-- Your custom JS -->
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.11.4/dist/gsap.min.js"></script>
+<script src="main.js"></script>
+
+</body>
+</html>
